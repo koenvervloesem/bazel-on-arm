@@ -10,6 +10,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v1
       - name: Install development requirements
-        run: make dev_requirements
+        run: sudo make dev_requirements
       - name: Check code
         run: make check

@@ -27,7 +27,7 @@ This installs OpenJDK 11 and makes it your default JDK.
 
 Note: this can take a while, because it installs a whopping 1 GB of JDK files.
 
-Then, if you want to build the latest Bazel version supported by this project (which is stored in the file [VERSION](VERSION)), just run:
+Then, if you want to build the latest Bazel version supported by this project (which is stored in the file [BAZEL_VERSION](BAZEL_VERSION)), just run:
 
 ```shell
 make bazel
