@@ -1,0 +1,21 @@
+diff -ruN bazel/tools/jdk/BUILD bazel-2/tools/jdk/BUILD
+--- bazel/tools/jdk/BUILD	1980-01-01 00:00:00.000000000 +0000
++++ bazel-2/tools/jdk/BUILD	2020-07-03 19:57:58.887341782 +0100
+@@ -140,7 +140,7 @@
+         "//src/conditions:freebsd": [":jni_md_header-freebsd"],
+         "//src/conditions:openbsd": [":jni_md_header-openbsd"],
+         "//src/conditions:windows": [":jni_md_header-windows"],
+-        "//conditions:default": [],
++        "//conditions:default": [":jni_md_header-linux"],
+     }),
+     includes = ["include"] + select({
+         "//src/conditions:linux_x86_64": ["include/linux"],
+@@ -149,7 +149,7 @@
+         "//src/conditions:freebsd": ["include/freebsd"],
+         "//src/conditions:openbsd": ["include/openbsd"],
+         "//src/conditions:windows": ["include/win32"],
+-        "//conditions:default": [],
++        "//conditions:default": ["include/linux"],
+     }),
+ )
+ 
