@@ -57,7 +57,7 @@ Now you can use the `bazel` command to build other projects. Check its version w
 bazel version
 ```
 
-This should show smoething like:
+This should show something like:
 
 ```shell
 Extracting Bazel installation...
@@ -96,6 +96,10 @@ The key to solve a build issue on ARM was [this fix](https://github.com/bazelbui
 I needed Bazel to build [TensorFlow Addons](https://www.tensorflow.org/addons), which I needed because I wanted to run [Rasa](https://rasa.com/) on my Raspberry Pi. This turned out to be a challenge, and building Bazel was the easiest part of it.
 
 Because I don't trust a random person's binary files on a Google Drive, I decided to build Bazel myself. 
+
+## Pre-built binaries
+
+I recommend you to build Bazel yourself, but if you really don't want to do it, you can download [binary releases](https://github.com/koenvervloesem/bazel-on-arm/releases) built by this project.
 
 ## References 
 
