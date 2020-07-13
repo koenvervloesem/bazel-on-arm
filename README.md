@@ -80,7 +80,8 @@ sudo make uninstall
 If you want to build another Bazel version than the ones supported by Bazel on ARM, just copy the unpacked Bazel distribution directory, make your changes, create the patch and put it in the directory [patches](patches) with the version number in the file name. Then the build script will pick this up. For instance:
 
 ```shell
-wget https://github.com/bazelbuild/bazel/releases/download/3.3.1/3.3.1-dist.zip
+wget https://github.com/bazelbuild/bazel/releases/download/3.3.1/bazel-3.3.1-dist.zip
+unzip -d bazel bazel-3.3.1-dist.zip
 cp -r bazel bazel-2
 # Make your changes in the `bazel-2` directory
 diff -ruN bazel bazel-2 > patches/bazel-3.3.1-arm.patch
