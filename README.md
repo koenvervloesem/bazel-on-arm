@@ -90,7 +90,7 @@ diff -ruN bazel bazel-2 > patches/bazel-3.3.1-arm.patch
 
 If you have successfully built the release, please contribute your patch to this project by a pull request so others can benefit from it too.
 
-The key to solve a build issue on ARM was [this fix](https://github.com/bazelbuild/bazel/issues/11643#issuecomment-650573425) by [@redsigma](https://github.com/redsigma). The two lines mentioned in that issue were the only two that needed to be patched for the Bazel versions I tried to build. This is not the cleanest solution, but it works. Chances are that you need exactly the same patch to build other recent versions of Bazel on ARM.
+Have a look at the existing patches. Chances are that you need one of these to successfully build another recent version of Bazel.
 
 ## Motivation 
 
@@ -108,6 +108,7 @@ When I was searching for a Bazel build for Raspberry Pi, I encountered the follo
 
 * [ochafik/rpi-raspbian-bazel](https://github.com/ochafik/rpi-raspbian-bazel): Seems to be unmaintained since end-2017.
 * [PINTO0309/Bazel_bin](https://github.com/PINTO0309/Bazel_bin): Has an impressive list of pre-built binaries for armhf, aarch64 and x86_64 as well as build instructions, but no releases more recent than 2.0.0.
+* [This fix](https://github.com/bazelbuild/bazel/issues/11643#issuecomment-650573425) by [@redsigma](https://github.com/redsigma) was the key to solve my initial issue with building Bazel on ARM.
 
 ## License
 
