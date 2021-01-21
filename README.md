@@ -107,7 +107,7 @@ I recommend you to build Bazel yourself, but if you really don't want to do it, 
 When I was searching for a Bazel build for Raspberry Pi, I encountered the following projects, which I didn't use for various reasons but they gave some helpful background information about building Bazel on ARM:
 
 * [ochafik/rpi-raspbian-bazel](https://github.com/ochafik/rpi-raspbian-bazel): Seems to be unmaintained since end-2017.
-* [PINTO0309/Bazel_bin](https://github.com/PINTO0309/Bazel_bin): Has an impressive list of pre-built binaries for armhf, aarch64 and x86_64 as well as build instructions, but no releases more recent than 2.0.0.
+* [PINTO0309/Bazel_bin](https://github.com/PINTO0309/Bazel_bin): Has an impressive list of pre-built binaries for armhf, aarch64 and x86_64 as well as build instructions, but no recent releases when I started this project.
 * [This fix](https://github.com/bazelbuild/bazel/issues/11643#issuecomment-650573425) by [@redsigma](https://github.com/redsigma) was the key to solve my initial issue with building Bazel on ARM.
 
 ## License
