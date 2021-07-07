@@ -1,0 +1,40 @@
+diff -ruN bazel/src/main/java/com/google/devtools/build/lib/syntax/BUILD bazel-2/src/main/java/com/google/devtools/build/lib/syntax/BUILD
+--- bazel/src/main/java/com/google/devtools/build/lib/syntax/BUILD	2021-07-07 00:29:54.913024005 +0100
++++ bazel-2/src/main/java/com/google/devtools/build/lib/syntax/BUILD	2021-07-07 01:19:06.850084963 +0100
+@@ -170,6 +170,7 @@
+         "//src/conditions:freebsd": ["@bazel_tools//tools/jdk:jni_md_header-freebsd"],
+         "//src/conditions:openbsd": ["@bazel_tools//tools/jdk:jni_md_header-openbsd"],
+         "//src/conditions:windows": ["@bazel_tools//tools/jdk:jni_md_header-windows"],
++	"//src/conditions:arm": ["@bazel_tools//tools/jdk:jni_md_header-linux"],
+         "//conditions:default": [],
+     }),
+     includes = ["../../../../../../../../../external/bazel_tools/tools/jdk/include"] + select({
+@@ -180,6 +181,7 @@
+         "//src/conditions:freebsd": ["../../../../../../../../../external/bazel_tools/tools/jdk/include/freebsd"],
+         "//src/conditions:openbsd": ["../../../../../../../../../external/bazel_tools/tools/jdk/include/openbsd"],
+         "//src/conditions:windows": ["../../../../../../../../../external/bazel_tools/tools/jdk/include/win32"],
++	"//src/conditions:arm": ["../../../../../../../../../external/bazel_tools/tools/jdk/include/linux"],
+         "//conditions:default": [],
+     }),
+ )
+diff -ruN bazel/tools/jdk/BUILD bazel-2/tools/jdk/BUILD
+--- bazel/tools/jdk/BUILD	2021-07-07 01:18:25.671080806 +0100
++++ bazel-2/tools/jdk/BUILD	2021-07-07 01:15:39.505124225 +0100
+@@ -140,7 +140,7 @@
+         "//src/conditions:freebsd": [":jni_md_header-freebsd"],
+         "//src/conditions:openbsd": [":jni_md_header-openbsd"],
+         "//src/conditions:windows": [":jni_md_header-windows"],
+-        "//conditions:default": [],
++        "//conditions:default": [":jni_md_header-linux"],
+     }),
+     includes = ["include"] + select({
+         "//src/conditions:linux_x86_64": ["include/linux"],
+@@ -149,7 +149,7 @@
+         "//src/conditions:freebsd": ["include/freebsd"],
+         "//src/conditions:openbsd": ["include/openbsd"],
+         "//src/conditions:windows": ["include/win32"],
+-        "//conditions:default": [],
++        "//conditions:default": ["include/linux"],
+     }),
+ )
+ 
