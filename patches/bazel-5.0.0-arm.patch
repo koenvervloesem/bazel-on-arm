@@ -1,0 +1,33 @@
+diff -ruN bazel/tools/cpp/unix_cc_configure.bzl bazel-2/tools/cpp/unix_cc_configure.bzl
+--- bazel/tools/cpp/unix_cc_configure.bzl	1980-01-01 00:00:00.000000000 +0000
++++ bazel-2/tools/cpp/unix_cc_configure.bzl	2022-03-28 10:06:09.484759600 +0100
+@@ -400,7 +400,7 @@
+         False,
+     ), ":")
+ 
+-    bazel_linkopts = "-lstdc++:-lm"
++    bazel_linkopts = "-lstdc++:-lm -latomic"
+     bazel_linklibs = ""
+     if repository_ctx.flag_enabled("incompatible_linkopts_to_linklibs"):
+         bazel_linkopts, bazel_linklibs = bazel_linklibs, bazel_linkopts
+diff -ruN bazel/tools/jdk/BUILD.tools bazel-2/tools/jdk/BUILD.tools
+--- bazel/tools/jdk/BUILD.tools	1980-01-01 00:00:00.000000000 +0000
++++ bazel-2/tools/jdk/BUILD.tools	2022-03-28 10:08:39.462368364 +0100
+@@ -100,7 +100,7 @@
+         "//src/conditions:freebsd": [":jni_md_header-freebsd"],
+         "//src/conditions:openbsd": [":jni_md_header-openbsd"],
+         "//src/conditions:windows": [":jni_md_header-windows"],
+-        "//conditions:default": [],
++        "//conditions:default": [":jni_md_header-linux"],
+     }),
+     includes = ["include"] + select({
+         "//src/conditions:linux_aarch64": ["include/linux"],
+@@ -113,7 +113,7 @@
+         "//src/conditions:freebsd": ["include/freebsd"],
+         "//src/conditions:openbsd": ["include/openbsd"],
+         "//src/conditions:windows": ["include/win32"],
+-        "//conditions:default": [],
++        "//conditions:default": ["include/linux"],
+     }),
+ )
+ 
