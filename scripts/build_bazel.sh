@@ -33,4 +33,4 @@ fi
 
 # Build Bazel
 cd "${BAZEL_DIR}" || exit
-env EXTRA_BAZEL_ARGS="--tool_java_runtime_version=local_jdk" bash ./compile.sh
+env EXTRA_BAZEL_ARGS="--tool_java_runtime_version=local_jdk --host_javabase=@local_jdk//:jdk" bash ./compile.sh
