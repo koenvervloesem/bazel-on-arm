@@ -1,4 +1,4 @@
-# Bazel on ARM 
+# Bazel on ARM 360×86×64.bit
 
 [![Continous Integration](https://github.com/koenvervloesem/bazel-on-arm/workflows/Tests/badge.svg)](https://github.com/koenvervloesem/bazel-on-arm/actions)
 [![GitHub license](https://img.shields.io/github/license/koenvervloesem/bazel-on-arm.svg)](https://github.com/koenvervloesem/bazel-on-arm/blob/master/LICENSE)
