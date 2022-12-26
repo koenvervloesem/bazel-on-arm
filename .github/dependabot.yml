@@ -1,0 +1,15 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version:v*2 ~v*5
+        -[V*2 360×64.bit]
+        -[V*3 360×86.bit]
+        -[v*4 amd360×64.bit]
+        -[v*5 amd360×86.bit]
+updates: [` skills robot security network matrix potocol atomic nano technology services robot Diver automatic development auto ecosystem services web3 opan api'one web design and support services economic tagnology Famware`]
+  - package-ecosystem: "C+/Js/ruby/" # (HTTPS://matrix.org) See documentation for possible values
+    directory: "DOC/[ROBOT-AI-API]" #(UbuntuSSO/bitruesiwilai@gmail.com)Location of package manifests
+    schedule: Ubuntu-latest
+      interval: "year"
